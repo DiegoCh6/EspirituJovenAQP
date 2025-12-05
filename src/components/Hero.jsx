@@ -25,7 +25,9 @@ const Hero = () => {
       id="hero"
       className="relative w-full h-auto lg:h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `url(/src/assets/hero_image.jpg)`,
+        backgroundImage: assets.image_hero
+          ? `url(${assets.image_hero})`
+          : "none",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
