@@ -1,59 +1,63 @@
 import { motion } from "motion/react";
 
-const ServiceCard = ({ service, index, onImageClick }) => {
+const ServiceCard = ({ service, index }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
       viewport={{ once: true }}
-      whileHover={{ y: -8 }}
-      className="group relative bg-gradient-to-br from-white to-[#f0faff] dark:from-gray-900 dark:to-[#07334a] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-[#D6E4FF]/30 dark:border-[#0b506f]/50 transition-all duration-300 flex flex-col h-full"
+      className="group flex flex-col h-full bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
     >
-      {/* Title with Yellow Stripe */}
-      <div className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 px-6 py-3 flex-shrink-0">
-        <h3 className="text-base sm:text-lg font-bold text-center">
-          <span className="text-black dark:text-white" style={{ textShadow: '1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff' }}>
-            {service.title}
-          </span>
-          <style jsx>{`
-            .dark h3 span {
-              text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000 !important;
-            }
-          `}</style>
+      {/* Title with background - FIXED height */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.08 + 0.05 }}
+        viewport={{ once: true }}
+        className="bg-gradient-to-r from-[#0095d0] to-[#36c9fa] px-4 sm:px-5 py-3 sm:py-4 h-[68px] sm:h-[76px] flex items-center flex-shrink-0"
+      >
+        <h3 className="w-full text-lg sm:text-xl font-bold text-white drop-shadow-sm line-clamp-2 uppercase text-center">
+          {service.title}
         </h3>
-      </div>
+      </motion.div>
 
-      {/* Image Preview - Fixed Height */}
-      {service.image && (
-        <div 
-          className="relative w-full h-48 sm:h-56 flex-shrink-0 cursor-pointer group/img overflow-hidden"
-          onClick={onImageClick}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onImageClick()}
-        >
-          <img 
+      {/* Image Container - EXACTLY uniform height */}
+      <div className="relative w-full h-[240px] sm:h-[280px] overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0">
+        {service.image && (
+          <motion.img 
             src={service.image} 
             alt={service.title}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110"
+            className="absolute top-1/2 left-1/2 w-auto h-full -translate-x-1/2 -translate-y-1/2"
+            whileHover={{ scale: 1.08 }}
+            transition={{ duration: 0.5 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end justify-end p-2" />
-          <div className="absolute bottom-2 right-2 bg-white/90 dark:bg-gray-800/90 text-xs px-2 py-1 rounded-full text-gray-700 dark:text-gray-200 shadow-md opacity-0 group-hover/img:opacity-100 transition-opacity duration-300">
-            Ver imagen
-          </div>
-        </div>
-      )}
-
-      {/* Description - Flexible */}
-      <div className="px-6 py-4 flex-grow flex flex-col justify-center">
-        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-center leading-relaxed">
-          {service.description}
-        </p>
+        )}
       </div>
 
-      {/* Hover Accent Line */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#0095d0] via-[#0cb3eb] to-[#36c9fa] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+      {/* Description - FIXED minimum height with flex grow */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.08 + 0.1 }}
+        viewport={{ once: true }}
+        className="flex flex-col flex-grow p-4 sm:p-5 min-h-[130px] sm:min-h-[150px] justify-between border border-t-0 border-gray-200 dark:border-gray-700"
+      >
+        {/* Text content */}
+        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed flex-grow">
+          {service.description}
+        </p>
+
+        {/* Accent Line - Bottom aligned */}
+        <motion.div
+          className="h-1 w-10 bg-gradient-to-r from-[#0095d0] to-[#36c9fa] mt-4 rounded-full"
+          initial={{ width: 0 }}
+          whileInView={{ width: 40 }}
+          whileHover={{ width: 56 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        />
+      </motion.div>
     </motion.div>
   );
 };

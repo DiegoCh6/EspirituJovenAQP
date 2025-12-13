@@ -24,7 +24,6 @@ const App = () => {
         <Hero />
         <SpecialtiesCarousel />
         <Services />
-        {/* <OurWork /> */}
         <AboutUS />
         <ContactUs />
         <Footer theme={theme} />

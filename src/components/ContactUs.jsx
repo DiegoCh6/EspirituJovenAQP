@@ -89,7 +89,7 @@ const ContactUs = () => {
               <div className='flex-1'>
                 <p className='text-xs font-bold text-[#0095d0] dark:text-[#36c9fa] uppercase tracking-wide mb-2'>Email</p>
                 <a href="mailto:dchuctayar@gmail.com" target="_blank" rel="noopener noreferrer" className='text-base sm:text-lg font-semibold text-gray-800 dark:text-white hover:text-[#0095d0] dark:hover:text-[#36c9fa] transition-colors'>
-                  dchuctayar@gmail.com
+                  chuctaya71132@gmail.com
                 </a>
               </div>
             </motion.div>

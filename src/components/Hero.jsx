@@ -38,15 +38,15 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/30 dark:bg-black/50" />
 
       {/* Content container */}
-      <div className="relative z-10 w-full flex items-center justify-center px-3 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-0 min-h-auto lg:min-h-screen">
-        <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
+      <div className="relative z-10 w-full flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-0 min-h-auto lg:min-h-screen">
+        <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text content section */}
           <motion.div
             variants={fadeInLeft}
             initial="hidden"
             animate="visible"
             transition={{ ...transition, delay: 0.4 }}
-            className="flex flex-col gap-5 sm:gap-6 lg:gap-8 order-2 lg:order-1"
+            className="flex flex-col gap-4 sm:gap-6 lg:gap-8 order-2 lg:order-1"
           >
             {/* Trust badge */}
             <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/90 dark:bg-[#07334a]/80 border border-[#0095d0]/30 dark:border-[#36c9fa]/40 rounded-full w-fit mx-auto backdrop-blur-sm">
@@ -58,7 +58,7 @@ const Hero = () => {
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
               <span className="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200">
-                Más de 1,000 pacientes satisfechos
+                Más de 3,000 pacientes satisfechos
               </span>
             </div>
 
@@ -68,7 +68,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               transition={{ ...transition, delay: 0.6 }}
-              className="text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-center"
+              className="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight text-center"
             >
               <span className="block text-white drop-shadow-lg">
                 Tu Salud es
@@ -84,7 +84,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               transition={{ ...transition, delay: 0.7 }}
-              className="text-sm sm:text-base lg:text-lg xl:text-xl text-white/95 drop-shadow-md max-w-lg text-center mx-auto"
+              className="text-sm sm:text-base lg:text-lg text-white/90 drop-shadow-md max-w-lg text-center mx-auto"
             >
               Centro médico integral con enfoque en cirugía laparoscópica,
               atención personalizada y tecnología de punta para tu bienestar.
@@ -192,23 +192,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
 
-              {/* Specialty badge */}
-              <motion.div
-                variants={fadeInUp}
-                initial="hidden"
-                animate="visible"
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/95 dark:bg-[#07334a]/90 rounded-full px-6 py-3 shadow-lg border-2 border-[#0095d0]/30 backdrop-blur-sm"
-              >
-                <p className="text-center">
-                  <span className="block text-sm font-bold text-[#0095d0] dark:text-[#36c9fa]">
-                    Especialista en
-                  </span>
-                  <span className="block text-xs text-gray-600 dark:text-gray-300">
-                    Cirugía Laparoscópica
-                  </span>
-                </p>
-              </motion.div>
+              
             </div>
 
             {/* Doctor info */}
@@ -220,17 +204,37 @@ const Hero = () => {
               className="text-center"
             >
               <h2
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 text-white drop-shadow-lg"
-                style={{
-                  textShadow:
-                    "0 0 30px rgba(220, 38, 38, 0.6), 0 0 50px rgba(220, 38, 38, 0.4), 0 0 70px rgba(220, 38, 38, 0.2)",
-                }}
+                className="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight text-center block text-white drop-shadow-[0_0_10px_rgba(54,201,250,0.5)] mt-2"
+                
               >
                 Dr. Angelo Chuctaya
               </h2>
-              <p className="text-lg text-white/90 drop-shadow-md">
-                Cirujano General - Laparoscopía Avanzada
-              </p>
+              <h2> </h2>
+              <div className="flex justify-center">
+                <div className="inline-flex items-center gap-3 sm:gap-3.5 px-3.5 sm:px-4.5 py-2.5 sm:py-3 rounded-xl bg-white/90 dark:bg-[#07334a]/85 border border-white/50 dark:border-[#36c9fa]/25 shadow-lg backdrop-blur-sm max-w-md w-fit">
+                  <span className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#0095d0] to-[#36c9fa] text-white shadow-md">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-4.5 w-4.5 sm:h-5 sm:w-5"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                      <path d="m15 11 3 3 3-3" />
+                    </svg>
+                  </span>
+                  <div className="text-center">
+                    <p className="text-base sm:text-lg uppercase tracking-[0.12em] font-semibold text-[#0095d0] dark:text-[#36c9fa] leading-snug">
+                      Especialista en Cirugía general y Laparoscopía Avanzada
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>

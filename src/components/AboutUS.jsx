@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 const AboutUS = () => {
   // Images for the slideshow
   const aboutImages = useMemo(
-    () => [assets.angelo, assets.local].filter(Boolean),
+    () => [assets.angelo, assets.nosotros, assets.image_hero].filter(Boolean),
     []
   );
 
@@ -48,57 +48,53 @@ const AboutUS = () => {
         viewport={{ once: true }}
         className="w-full lg:w-1/2 flex flex-col justify-center space-y-6"
       >
-        {/* Label */}
+        {/* Small Label */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="flex items-center gap-3"
         >
-          
-          <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="bg-gradient-to-r from-[#0095d0] via-[#36c9fa] to-[#0095d0] bg-clip-text text-transparent">
-              Sobre Nosotros
-            </span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#0095d0] to-[#36c9fa] mx-auto rounded-full" />
+          <p className="text-sm sm:text-base text-[#0095d0] dark:text-[#36c9fa] font-semibold uppercase tracking-wide">
+            Sobre el Dr. Angelo Chuctaya
+          </p>
         </motion.div>
 
-        {/* Description */}
-        <div className="space-y-4">
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
-            Con <span className="font-semibold text-[#0095d0] dark:text-[#36c9fa]">20 años de experiencia</span> en cirugía abdominal y laparoscópica, el Dr. Angelo Chuctaya lidera nuestro consultorio con excelencia médica y tecnología de punta.
-          </p>
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
-            Nos especializamos en <span className="font-semibold">procedimientos mínimamente invasivos</span>, garantizando recuperación rápida y resultados superiores para nuestros pacientes.
-          </p>
-        </div>
+        {/* Main Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="block -mt-2 sm:-mt-3 bg-gradient-to-r from-[#0095d0] to-[#36c9fa] bg-clip-text text-transparent text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
+        >
+          Confiabilidad y Experiencia Médica
+        </motion.h2>
 
-        {/* Quick Stats */}
-        <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4 pt-2">
-          {[
-            { num: "5000+", label: "Cirugías Exitosas" },
-            { num: "99%", label: "Satisfacción" },
-            { num: "20+", label: "Años Experiencia" }
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-[#0095d0]/10 to-[#36c9fa]/10 dark:from-[#0095d0]/20 dark:to-[#36c9fa]/20 rounded-lg p-2 sm:p-3 text-center border border-[#0095d0]/20 dark:border-[#36c9fa]/30"
-            >
-              <div className="text-lg sm:text-xl lg:text-2xl font-bold text-[#0095d0] dark:text-[#36c9fa]">
-                {stat.num}
-              </div>
-              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* Description Paragraphs */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-base"
+        >
+          <p>
+            El <span className="font-bold text-gray-900 dark:text-white">Dr. Angelo Chuctaya</span> (CMP 67474 – RNE 39074) es{" "}
+            <span className="font-bold text-[#0b5d3e] dark:text-[#10b981]">especialista en Cirugía General y Laparoscópica</span>, con amplia experiencia en el manejo de emergencias quirúrgicas y procedimientos abdominales de alta complejidad.
+          </p>
+
+          <p>
+            Cada día brinda atención a pacientes que requieren soluciones inmediatas y seguras, priorizando la recuperación rápida y la calidad de vida. Su enfoque combina{" "}
+            <span className="font-bold text-gray-900 dark:text-white">técnicas mínimamente invasivas</span>, equipamiento moderno y un trato humano y cercano, asegurando a cada paciente la confianza de estar en manos expertas.
+          </p>
+
+          <p>
+            Además, ha complementado su formación con{" "}
+            <span className="font-bold text-gray-900 dark:text-white">capacitaciones internacionales en Brasil, Chile y México</span>, especializándose en cirugía laparoscópica avanzada, mínima invasión y manejo de trauma. Esta experiencia internacional le permite aplicar en Arequipa{" "}
+            <span className="font-bold text-[#0b5d3e] dark:text-[#10b981]">técnicas de vanguardia reconocidas a nivel mundial</span>.
+          </p>
+        </motion.div>
 
         {/* CTA Button */}
         <motion.div
@@ -106,39 +102,20 @@ const AboutUS = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="pt-4 flex justify-center"
+          className="pt-4"
         >
           <a
-            href="#contact-us"
-            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0095d0] to-[#36c9fa] hover:from-[#0080b8] hover:to-[#2eb8e6] text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-2xl active:scale-95 transition-all duration-300"
+            href="https://wa.me/51993088844"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#25d366] to-[#1da851] hover:from-[#1ebe5d] hover:to-[#158f46] text-white font-bold px-8 py-3.5 rounded-lg shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
             </svg>
-            <span>Agendar Consulta</span>
+            <span>Agenda una cita</span>
           </a>
         </motion.div>
-
-        {/* Feature Highlight - Desktop only */}
-        <div className="hidden lg:block pt-6 border-t border-[#0095d0]/20 dark:border-[#36c9fa]/30">
-          <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 mt-1">
-              <div className="flex items-center justify-center h-8 w-8 rounded-full bg-[#0095d0]/20 dark:bg-[#36c9fa]/30">
-                <svg className="h-5 w-5 text-[#0095d0] dark:text-[#36c9fa]" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-              </div>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900 dark:text-white text-sm">
-                Atención Integral Personalizada
-              </p>
-              <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                Cada paciente recibe un plan quirúrgico personalizado con protocolos internacionales de seguridad.
-              </p>
-            </div>
-          </div>
-        </div>
       </motion.div>
 
       {/* Right Side - Image and Title Below */}
@@ -163,7 +140,7 @@ const AboutUS = () => {
                   key={aboutImages[currentIndex]}
                   src={aboutImages[currentIndex]}
                   alt="Consultorio"
-                  className="w-full h-full object-cover object-center"
+                  className="absolute top-2/3 left-1/2 w-auto h-full -translate-x-1/2 -translate-y-1/2"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
