@@ -22,13 +22,13 @@ const ServiceCard = ({ service, index }) => {
         </h3>
       </motion.div>
 
-      {/* Image Container - EXACTLY uniform height */}
-      <div className="relative w-full h-[240px] sm:h-[280px] overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0">
+      {/* Image Container - fixed height, images fill & crop without stretching */}
+      <div className="relative w-full h-60 sm:h-72 overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0">
         {service.image && (
-          <motion.img 
-            src={service.image} 
+          <motion.img
+            src={service.image}
             alt={service.title}
-            className="absolute top-1/2 left-1/2 w-auto h-full -translate-x-1/2 -translate-y-1/2"
+            className="block w-full h-full object-cover object-center"
             whileHover={{ scale: 1.08 }}
             transition={{ duration: 0.5 }}
           />
