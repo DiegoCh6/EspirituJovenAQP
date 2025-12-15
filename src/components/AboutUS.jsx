@@ -80,8 +80,8 @@ const AboutUS = () => {
           className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-base"
         >
           <p>
-            El <span className="font-bold text-gray-900 dark:text-white">Dr. Angelo Chuctaya</span> (CMP 67474 – RNE 39074) es{" "}
-            <span className="font-bold text-[#0b5d3e] dark:text-[#10b981]">especialista en Cirugía General y Laparoscópica</span>, con amplia experiencia en el manejo de emergencias quirúrgicas y procedimientos abdominales de alta complejidad.
+            El <span className="font-bold text-gray-900 dark:text-white">Dr. Angelo Chuctaya</span> (CMP 71132 – RNE 43088) es{" "}
+            <span className="font-bold bg-gradient-to-r from-[#0095d0] via-[#36c9fa] to-[#0095d0] bg-clip-text text-transparent">especialista en Cirugía General y Laparoscópica</span>, con amplia experiencia en el manejo de emergencias quirúrgicas y procedimientos abdominales de alta complejidad.
           </p>
 
           <p>
@@ -91,7 +91,7 @@ const AboutUS = () => {
 
           <p>
             Además, ha complementado su formación con{" "}
-            <span className="font-bold text-gray-900 dark:text-white">capacitaciones internacionales en Brasil, Chile y México</span>, especializándose en cirugía laparoscópica avanzada, mínima invasión y manejo de trauma. Esta experiencia internacional le permite aplicar en Arequipa{" "}
+            <span className="font-bold text-gray-900 dark:text-white">capacitaciones internacionales en Brasil y Colombia</span>, especializándose en cirugía laparoscópica avanzada, mínima invasión y manejo de trauma. Esta experiencia internacional le permite aplicar en Arequipa{" "}
             <span className="font-bold text-[#0b5d3e] dark:text-[#10b981]">técnicas de vanguardia reconocidas a nivel mundial</span>.
           </p>
         </motion.div>
